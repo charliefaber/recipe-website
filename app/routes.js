@@ -8,7 +8,7 @@ var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
 var textract = require('textract');
-var auth = require('../config/auth.js');
+//var auth = require('../config/auth.js');
 
 
 var bcrypt = require('bcrypt');
