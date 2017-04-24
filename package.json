@@ -19,7 +19,6 @@
   "dependencies": {
     "angular": "^1.6.3",
     "angular-file-upload": "^2.5.0",
-    "bcrypt": "^1.0.2",
     "bcrypt-nodejs": "^0.0.3",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.17.1",
