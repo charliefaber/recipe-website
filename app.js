@@ -13,7 +13,7 @@ var methodOverride = require('method-override');
 
 var port = process.env.PORT || 3000;
 var mongoose = require('mongoose');
-var passport = require('passport');
+//var passport = require('passport');
 // <<<<<<< HEAD
 // //var flash = require('connect-flash');
 // =======
@@ -132,7 +132,7 @@ STORE NEW ADMIN ACCOUNT CODE HERE
 // });
 
                   // saveUninitialized: true}));
-app.use(passport.initialize());
+//app.use(passport.initialize());
 // app.use(passport.session());
 // app.use(flash());
 // app.use(function(req, res, next){
