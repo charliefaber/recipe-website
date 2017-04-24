@@ -27,6 +27,9 @@ var assert = require('assert');
 var MongoClient = mongo.MongoClient;
 var configDb = require('./config/database.js');
 var auth = require('./config/auth.js');
+var bcrypt = require('bcrypt');
+var salt = bcrypt.genSaltSync(10);
+
 
 var session = require('express-session');
 // Instantiate express variable
@@ -90,9 +93,7 @@ var authAdmin = function(req, res, next) {
 };
 
 
-var bcrypt = require('bcrypt');
 // Generate a salt
-var salt = bcrypt.genSaltSync(10);
 
 // // Hash the password with the salt
 // var hash = bcrypt.hashSync("ChampionOfRrr", salt);
