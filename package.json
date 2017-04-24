@@ -47,6 +47,20 @@
     "underscore": "^1.8.3"
   },
   "engines": {
+<<<<<<< HEAD
     "node": "6.10.0"
   }
+=======
+    "node": "7.9.0"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/charliefaber/sga-document-archive.git"
+  },
+  "bugs": {
+    "url": "https://github.com/charliefaber/sga-document-archive/issues"
+  },
+  "homepage": "https://github.com/charliefaber/sga-document-archive#readme"
+>>>>>>> 119fa0d766cd6972cd66f146df72ad13eef8a6d6
 }
