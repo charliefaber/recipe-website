@@ -14,7 +14,7 @@ var textract = require('textract');
 var bcrypt = require('bcryptjs');
 
 
-module.exports = function(app, passport){
+module.exports = function(app){
 
 //
 //HOME PAGE
