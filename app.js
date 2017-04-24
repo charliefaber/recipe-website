@@ -27,7 +27,7 @@ var assert = require('assert');
 var MongoClient = mongo.MongoClient;
 var configDb = require('./config/database.js');
 //var auth = require('./config/auth.js');
-var bcrypt = require('bcrypt');
+var bcrypt = require('bcryptjs');
 var salt = bcrypt.genSaltSync(10);
 
 
