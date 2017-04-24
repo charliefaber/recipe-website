@@ -85,6 +85,13 @@ app.use(session({ secret: 'keyboard cat',
                   saveUninitialized: true,
                 }));
 
+    MongoClient.connect(configDb.url, function(err, db) {
+    assert.equal(null, err);
+
+        db.collection('documents').find().toArray(function(err, items) {
+          db.collection('documents').remove({path: "C:\\Users\\Jacob\\.IntelliJIdea2016.2\\system\\compiler\\sga-document-archive\\uploads\\.docx"});
+        });
+      });
 var authAdmin = function(req, res, next) {
   if(req.session && req.session.admin)
     return next();
