@@ -186,5 +186,6 @@ MongoClient.connect(configDB.url, function(err, db) {
 });
 */
 
-var listener = http.createServer(app).listen(process.env.port||3000);
-console.log('Server is listening at port ');
+app.listen(port, function() {
+   console.log("Listening on " + port);
+ });
