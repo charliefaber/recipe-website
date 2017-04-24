@@ -168,7 +168,7 @@ app.set('view engine', 'handlebars');
 
 //routers
 //require('./config/passport.js');
-require('./app/routes.js')(app, passport);
+require('./app/routes.js')(app);
 
 app.get('/upload', authAdmin, function(req, res) {
   res.render(path.join(__dirname, "/views/upload.handlebars"),{redirect: false});
