@@ -54,6 +54,13 @@
 	display: inline;
 }
 
+.login #create {
+	width: 175px;
+	height: 200px;
+	margin: auto;
+	display: block;
+}
+
 .login #key {
 	width: 175px;
 	height: 175px;

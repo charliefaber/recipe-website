@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>SGA Document Archive - Home</title>
+	<title>Mama Faber's - Home</title>
 	
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,21 +11,18 @@
 
 	<link rel="stylesheet" type="text/css" href="../public/css/index.css">
 </head>
-<br>
 <body style="background-image: url('../public/images/background.jpg'")>
-
+<br>
 
 <div class="container">
     <br>
     
 	<div class="header">
-		<a href="/upload"><button style="margin-right: 10px; display:inline; float: right" type="button" class="btn btn-default btn-md">Upload</button></a>
+		<a href="/logout"><button style="margin-right: 10px; display:inline; float: right" type="button" class="btn btn-danger btn-md">Log Out</button></a>
 		<br><br>
 	</div>
    
-
 	<div class="search">
-
 		<div class="row no-gutter">
 			<div class="col-md-4"></div>
 			<div class="col-md-4">
@@ -33,57 +30,52 @@
 			</div>
 			<div class="col-md-4"></div>
 		</div>	
-		<h3 style="font-weight: bold;">Georgia College Student Government Association</h3>
-		<h3 style="font-style: italic;">Document Archive</h3>
+		
+		<h2 style="font-weight: bold;margin-bottom:0px">Mama Faber's</h2>
+		<h3 style="font-style: italic;">Family Recipe Archive</h3>
 		<br>
+	
 		<form ref="searchForm"
-			  id="searchForm"
-			  action="/search"
-			  method="post"
-			  enctype="form-data">
-			<fieldset>
+			   id="searchForm"
+		   action="/search"
+		   method="post"
+		  enctype="form-data">
+		<fieldset>
 			<div class="row no-gutter">
 				<div class="col-md-2"></div>
 				<div class="col-md-4">
 					<input type="text" class="form-control input-md input-block" name="searchText" id="search" placeholder="Enter your search query here..." required/>
 				</div>
 				<div class="col-md-2">
-				<select id="filterSelect" name="filterSelect" class="input-md form-control">
-				<option value="relevancy" selected>Most Relevant</option>
-				<option value="recency">Most Recent</option>
-				<option value="cost (highest first)">Highest Dollar Amount</option>
-				<option value="cost (lowest first)">Lowest Dollar Amount</option>
-				</select>
+					<select id="filterSelect" name="filterSelect" class="input-md form-control">
+						<option value="Any Meal" selected>Any Meal</option>
+						<option value="Breakfast">Breakfast</option>
+						<option value="Lunch">Lunch</option>
+						<option value="Dinner">Dinner</option>
+						<option value="Dessert">Dessert</option>
+						<option value="Other">Other</option>
+					</select>
 				</div>
 				<div class="col-md-2">
 					<button type="submit" name="searchBtn" class="btn btn-primary btn-block btn-md">Search</button>
 				</div>
 				<div class="col-md-2"></div>
 			</div>
-			</fieldset>
+		</fieldset>
 		</form>
 
-		<div class="row no-gutter">
-			<div class="col-md-2"></div>
-			<div class="col-md-8">
-				<p style="float: left"><a href="/advanced">Advanced Search</a></p>
-			</div>
-			<div class="col-md-2"></div>
-		</div>
 
 		<br>
+
 	</div>
-	<br>
-	<br>
-	<br>
-<br>
+	<br><br>
+	<br><br>
 	<hr>
 	
 	<h2><center>Recent Uploads: </center></h2>
 
-	
-	<hr><br>
-
+	<hr>
+	<br>
 
 	<div class="recent">
 		{{#if items}}
@@ -92,59 +84,35 @@
 	 		<div class="row no-gutter"> 
 				<div class="col-md-2"></div>
 				<div class="col-md-8">
-					<h3 style="font-weight:bold">{{this._id}}</h3>
-					<span style="font-size: 1.2em; font-style: italic;">Date: {{this.date}}</span><br><br>
-					<h3 >A {{this.docType}}</h3>
-					<span style="font-size: 1.2em">{{this.tagline}}</span><br><br>
-
-
-
-
+					<h2 style="font-weight:bold; margin-bottom:0px;">{{inc @index}}. {{this.name}}</h2>
+					<span style="font-size: 1.2em">Date Added: {{this.date}}</span><br><br>
+					
+					<span style="font-weight:bold; font-size: 1.4em">{{this.meal}}</span><br>
+					<span style="font-style:italic; font-size:1.2em">Serves {{this.servings}}</span> <br>
 					<div class="panel-group">
 					  <div class="panel panel-default">
 					    <div class="panel-heading">
 					      <h4 class="panel-title">
-					        <a data-toggle="collapse" href="#collapse{{inc @index}}">Click here to see full text of {{this._id}}</a>
+					        <a data-toggle="collapse" href="#collapse{{inc @index}}">Click here to see full recipe for {{this.name}}</a>
 					      </h4>
 					    </div>
 					    <div id="collapse{{inc @index}}" class="panel-collapse collapse">
-					      <div class="panel-body">{{this.text}}</div>
+					      <div class="panel-body">{{this.prep}}</div>
 					    </div>
 					  </div>
 					</div>
-						
-						<br>
-					<a href="/download/{{this._id}}"><span style="display: inline; float: right">Download Original File</span></a>
-				</div>
-
+<hr>
+{{!-- 					<a href="/download/{{this._id}}"><span style="display: inline; float: right">Download Original File</span></a>
+ --}}				</div>
 				<div class="col-md-2"></div>
 			</div>
-
-
-				 		<div class="row no-gutter"> 
-				<div class="col-md-1"></div>
-				<div class="col-md-10">
-				<hr>
-				</div>
-				<div class="col-md-1"></div>
-</div>
 	 		
 	 	{{/each}}
 	 {{/if}}
 	</div>
 
-
-
+</div>
 <br>
-
-	<div style="margin-bottom:10px; font-weight: bold" class="footer">
-
-			<a style="display: inline; float: left;" href="/help">Help</a>
-		<a style="display: inline; float: right;" href="/contact">Contact Us</a><br>
-	</div>
-
-
-
 
 </body>
 </html>

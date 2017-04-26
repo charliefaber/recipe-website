@@ -1,26 +1,22 @@
 {
-  "name": "sga-document-archive",
+  "name": "recipe-archive",
   "version": "1.0.0",
-  "description": "A website that archives and searches past SGA bills and resolutions",
+  "description": "A website that archives and searches uploaded recipes",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app.js"
   },
   "keywords": [
-    "sga",
-    "document",
-    "archive",
-    "georgia",
-    "college"
+    "recipe",
+    "archive"
   ],
   "author": "Charlie Faber",
   "license": "ISC",
   "dependencies": {
     "angular": "^1.6.3",
     "angular-file-upload": "^2.5.0",
-    "bcrypt-nodejs": "^0.0.3",
-    "bcryptjs": "^2.4.3",
+    "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.17.1",
     "connect-flash": "^0.1.1",
     "connect-multiparty": "^2.0.0",
@@ -32,7 +28,6 @@
     "express-handlebars": "^3.0.0",
     "express-session": "1.15.2",
     "formidable": "^1.1.1",
-    "google-cloud": "^0.53.0",
     "gridfs-stream": "^1.1.1",
     "json-query": "^2.2.2",
     "method-override": "2.3.8",
@@ -47,8 +42,7 @@
     "underscore": "^1.8.3"
   },
   "engines": {
-    "node": "6.10.0"
-
+    "node": "7.9.0"
   },
   "devDependencies": {},
   "repository": {
